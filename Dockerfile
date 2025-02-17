@@ -1,6 +1,7 @@
 FROM rust:alpine AS builder
 WORKDIR /home/rust/src
 RUN apk --no-cache add musl-dev
+RUN apk --no-cache add curl
 COPY . .
 RUN cargo install --path .
 
